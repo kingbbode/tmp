@@ -134,13 +134,13 @@
 
 `pinpoint` 는 Java로 작성된 대규모 분산 시스템 용 APM 도구입니다.
 
-사내에서 사용하고 있는 모니터링툴이기도 하며, `Transaction Map` 과 `Stack Trace` 을 제공하는 APM 중 하나입니다.
+사내에서 사용하고 있는 모니터링툴이기도 하며, `Transaction` 의 추적을 제공하는 APM 중 하나입니다.
 
-##### Transaction Map
+![stacktrace](./images/stacktrace.png)
 
-테스트의 상태를 실시간으로 확인할 수 있는 `Transaction Map` 기능은
+단일 `Transaction`의 Stack Trace 를 기록하여 직접적인 병목이나 문제를 빠르게 추적할 수 있고, 테스트의 상태를 실시간으로 확인할 수 있는 `Transaction View` 는 가장 빠르게 이상을 감지하도록 합니다.
 
-빠르게 이상을 감지하도록 합니다. `nGrinder` 의 테스트 단위의 그래프보다 직접적으로 이상 패턴을 통해 문제를 인식할 수 있게 해줍니다.
+`Transaction View` 는 패턴에 따른 어플리케이션 상태 예측에도 큰 몫을 하였습니다. A 구간의 병목을 보였을 때 보이는 패턴, 외부 인터페이스가 병목을 보였을 때 등등 예상 패턴을 통해 더 빠른 조치가 가능하기도 했습니다.
 
 실제로 테스트를 하며 수많은 이상 패턴들이 탄생하기도 하였습니다.
 
@@ -152,15 +152,11 @@
 
 *(L타워 패턴)*
 
+그리고 노력 끝에 얻어진..
+
 ![백설기 패턴](./images/bsg.png)
 
-*(노력 끝에 얻어진 백설기 패턴)*
-
-##### Stack Trace
-
-![stacktrace](./images/stacktrace.png)
-
-`Transaction Map` 에 보였던 이상하거나 의심되는 `Transaction` 의 `Stack Trace` 기록 기능으로, 어플리케이션의 직접적인 병목이나 문제를 빠르게 추적할 수 있습니다.
+*(백설기 패턴)*
 
 #### jstack
 
